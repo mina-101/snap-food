@@ -33,7 +33,7 @@ class OrderService
 
     protected function calculateDeliveryTime()
     {
-        return Carbon::now()->addMinutes(env('DELIVERY_TIME', 50));
+        return Carbon::now()->addMinutes(intval(env('DELIVERY_TIME', 50)));
     }
 
 }
