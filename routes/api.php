@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Agent\V1\AgentController;
+use App\Http\Controllers\Api\DelayReport\V1\DelayReportController;
 use App\Http\Controllers\Api\Order\V1\OrderController;
 use App\Http\Controllers\Api\Trip\V1\TripController;
 use App\Http\Controllers\Api\Vendor\V1\VendorController;
@@ -11,5 +12,6 @@ Route::prefix('/v1/')->group(function () {
     Route::apiResource('agents', AgentController::class);
     Route::apiResource('orders', OrderController::class);
     Route::apiResource('orders.trips', TripController::class)->except(['update'])->shallow();
+    Route::apiResource('orders.delayReports', DelayReportController::class)->except(['update', 'destroy'])->shallow();
 });
 
