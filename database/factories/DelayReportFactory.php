@@ -19,8 +19,18 @@ class DelayReportFactory extends Factory
     public function definition(): array
     {
         return [
-            "order_id" => Order::factory(),
-            "status" => fake()->randomElement(array_column(DelayReportResult::cases(), 'value'))
+            'order_id' => Order::factory(),
+            'status' => DelayReportResult::DELAYED,
         ];
+    }
+
+    public function newDeliveryTime(): Factory
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'status' => DelayReportResult::NEW_DELIVERY_TIME,
+                'delay' => fake()->randomNumber(),
+            ];
+        });
     }
 }
