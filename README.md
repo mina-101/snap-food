@@ -8,14 +8,14 @@ src="storage/app/public/logo/snappfood.png" width="400" alt="Laravel Logo"></a><
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Snap Food
+## Snapp Food
 
-Snap food project is a web application which designs and implements a simple delivery system. There are plenty of entities such as Vendor, Agent, Order, Trip, etc. 
+Snapp food project is a web application which designs and implements a simple delivery system. There are plenty of entities such as Vendor, Agent, Order, Trip, etc. 
 
 ## Installation
 
 - make sure you have git and docker installed
-- git clone project from [https://github.com/mina-101/snap-food.git]
+- git clone project from [https://github.com/mina-101/snapp-food.git]
 - go to project directory:
     ```bash
   cd snapp-food/
