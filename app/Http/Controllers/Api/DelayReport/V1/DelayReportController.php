@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Api\DelayReport\V1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\DelayReport\V1\StoreDelayReportRequest;
-use App\Http\Requests\DelayReport\V1\UpdateDelayReportRequest;
-use App\Http\Resources\AgentResource;
-use App\Http\Resources\DelayReportResource;
 use App\Models\DelayReport;
 use App\Models\Order;
 use App\Services\DelayReport\V1\DelayReportService;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class DelayReportController extends Controller
 {
@@ -23,7 +21,18 @@ class DelayReportController extends Controller
         if ($result['status'] == 422) {
             return $this->unprocessable();
         }
+
         return $this->created();
     }
 
+    public function report()
+    {
+        return DelayReport::select('vendor_id', DB::raw('SUM(delay) AS total'))
+            ->join('orders', 'orders.id', '=', 'delay_reports.order_id')
+            ->join('vendors', 'orders.vendor_id', '=', 'vendors.id')
+            ->whereDate('delay_reports.created_at', '>', Carbon::now()->subDays(7))
+            ->orderByRaw('SUM(delay_reports.delay) desc')
+            ->groupBy('orders.vendor_id')->get();
+
+    }
 }

@@ -14,6 +14,6 @@ Route::prefix('/v1/')->group(function () {
     Route::apiResource('agents', AgentController::class);
     Route::apiResource('orders', OrderController::class);
     Route::apiResource('orders.trips', TripController::class)->except(['update'])->shallow();
-    Route::apiResource('orders.delayReports', DelayReportController::class)->except(['update', 'destroy'])->shallow();
+    Route::apiResource('orders.delayReports', DelayReportController::class)->only(['store'])->shallow();
+    Route::get('delayReports/report', [DelayReportController::class, 'report']);
 });
-
