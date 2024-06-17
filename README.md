@@ -16,14 +16,37 @@ Snap food project is a web application which designs and implements a simple del
 
 - make sure you have git and docker installed
 - git clone project from [https://github.com/mina-101/snap-food.git]
-- cd snap-food/
-- run docker-compose up -d
-- docker exec -it snap-food-laravel.test-1 bash
-- php artisan migrate
-
+- go to project directory:
+    ```bash
+  cd snap-food/
+  ```
+- execute this command to build and run project: 
+    ```bash
+  docker-compose up -d
+  ```
+- go to project container:
+  ```bash
+  docker exec -it snap-food-laravel.test-1 bash
+    ```
+- install composer 
+  ```bash
+  composer install
+    ```
+- to create tables run:
+   ```bash
+   php artisan migrate
+   ```
 
 ## Run Tests
 
-- docker exec -it snap-food-laravel.test-1 bash
-- php artisan test
+  - ```bash
+    docker exec -it snap-food-laravel.test-1 bash
+    ```
+  - ```bash
+    php artisan test
+    ```
+       
+    
+## Api Documentation
 
+- see route /docs/api#/ on your host for api docs
