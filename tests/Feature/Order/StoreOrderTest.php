@@ -12,13 +12,12 @@ class StoreOrderTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected $uri = "/api/v1/orders/";
-
+    protected $uri = '/api/v1/orders/';
 
     protected function setUp(): void
     {
         parent::setUp();
-        
+
         $this->data = [
             'description' => fake()->text,
             'user_id' => User::factory()->create()->id,
@@ -45,7 +44,6 @@ class StoreOrderTest extends TestCase
         $order = Order::first();
         $this->assertEquals($order->delivery_time, $order->created_at->addMinutes(50));
     }
-
 
     public function test_order_doesnt_create_with_wrong_data(): void
     {

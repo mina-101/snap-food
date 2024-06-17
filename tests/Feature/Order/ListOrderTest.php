@@ -10,7 +10,7 @@ class ListOrderTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected $uri = "/api/v1/orders/";
+    protected $uri = '/api/v1/orders/';
 
     public function test_order_list(): void
     {

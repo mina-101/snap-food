@@ -19,10 +19,10 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            "user_id" => User::factory(),
-            "vendor_id" => Vendor::factory(),
-            "delivery_time" => fake()->dateTime,
-            "description" => fake()->text,
+            'user_id' => User::factory(),
+            'vendor_id' => Vendor::factory(),
+            'delivery_time' => fake()->dateTime,
+            'description' => fake()->text,
         ];
     }
 }

@@ -35,5 +35,4 @@ class OrderService
     {
         return Carbon::now()->addMinutes(intval(env('DELIVERY_TIME', 50)));
     }
-
 }

@@ -14,7 +14,6 @@ class Agent extends Model
 
     const PAGE_LIMIT = 10;
 
-
     public function delays(): BelongsToMany
     {
         return $this->belongsToMany(Delay::class);

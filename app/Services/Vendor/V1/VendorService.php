@@ -27,5 +27,4 @@ class VendorService
     {
         $vendor->delete();
     }
-
 }

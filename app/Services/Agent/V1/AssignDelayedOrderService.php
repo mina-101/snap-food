@@ -8,7 +8,6 @@ use App\Models\Delay;
 
 class AssignDelayedOrderService
 {
-
     public function assignDelayedOrderToAgent(array $agentData): mixed
     {
         //we don't have authentication,so we get agent from request
@@ -30,5 +29,4 @@ class AssignDelayedOrderService
     {
         return Delay::whereDoesntHave('agents')->orWhere('status', DelayStatus::TRACK)->oldest()->first();
     }
-
 }

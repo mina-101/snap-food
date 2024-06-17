@@ -9,7 +9,6 @@ use App\Models\Order;
 use App\Models\Trip;
 use App\Services\Client\Interface\DeliveryTimeClientInterface;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Http;
 
 class DelayReportService
 {
@@ -22,25 +21,26 @@ class DelayReportService
         $trip = $order->trip;
         if ($trip && $this->isNotDelivered($trip)) {
             if (Carbon::now() < $order->delivery_time) {
-                return ["status" => 422];
+                return ['status' => 422];
             }
             $delay = $this->getNewDeliveryTime();
             $newDeliveryTime = $this->calculateNewDeliveryTime($delay);
             $this->updateDeliveryTime($order, $newDeliveryTime);
             $reportData = [
-                "status" => DelayReportResult::NEW_DELIVERY_TIME,
-                "delay" => $delay,
-                "new_delivery_time" => $newDeliveryTime,
+                'status' => DelayReportResult::NEW_DELIVERY_TIME,
+                'delay' => $delay,
+                'new_delivery_time' => $newDeliveryTime,
             ];
         } else {
             $this->orderIsDelayed($order);
             $reportData = [
-                "status" => DelayReportResult::DELAYED,
+                'status' => DelayReportResult::DELAYED,
             ];
         }
 
         $this->saveDelayReport($order, $reportData);
-        return ["status" => 200];
+
+        return ['status' => 200];
     }
 
     protected function isNotDelivered(Trip $trip): bool

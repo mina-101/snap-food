@@ -21,7 +21,7 @@ class addOrderToDelayQueue
     public function handle(OrderDelayed $event): void
     {
         $event->order->delays()->create([
-            'status' => DelayStatus::DELAYED
+            'status' => DelayStatus::DELAYED,
         ]);
     }
 }

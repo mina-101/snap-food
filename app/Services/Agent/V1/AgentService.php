@@ -27,5 +27,4 @@ class AgentService
     {
         $agent->delete();
     }
-
 }

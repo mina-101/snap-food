@@ -20,7 +20,7 @@ class TripFactory extends Factory
     {
         return [
             'order_id' => Order::factory(),
-            'status' => fake()->randomElement(array_column(TripStatus::cases(), 'value'))
+            'status' => fake()->randomElement(array_column(TripStatus::cases(), 'value')),
         ];
     }
 }

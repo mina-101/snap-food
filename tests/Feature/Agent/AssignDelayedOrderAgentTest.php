@@ -12,7 +12,7 @@ class AssignDelayedOrderAgentTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected $uri = "api/v1/agents/assign";
+    protected $uri = 'api/v1/agents/assign';
 
     protected function setUp(): void
     {
@@ -25,7 +25,7 @@ class AssignDelayedOrderAgentTest extends TestCase
         $this->seed(DelaySeeder::class);
         $agent = Agent::factory()->create();
         $data = [
-            'agent_id' => $agent->id
+            'agent_id' => $agent->id,
         ];
         $this->postJson($this->uri, $data)
             ->assertCreated();
