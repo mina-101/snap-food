@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Delay extends Model
 {
@@ -14,5 +15,10 @@ class Delay extends Model
     public function order()
     {
         return $this->belongsTo(Order::class);
+    }
+
+    public function agents(): BelongsToMany
+    {
+        return $this->belongsToMany(Agent::class);
     }
 }

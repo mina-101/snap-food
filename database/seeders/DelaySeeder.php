@@ -2,16 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Models\Agent;
+use App\Models\Delay;
 use Illuminate\Database\Seeder;
 
-class AgentSeeder extends Seeder
+class DelaySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Agent::factory()->count(10)->create();
+        Delay::factory()->count(10)->create();
     }
 }
