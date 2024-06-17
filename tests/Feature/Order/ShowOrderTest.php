@@ -4,13 +4,13 @@ namespace Tests\Feature\Order;
 
 use App\Models\Order;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ShowOrderTest extends TestCase
 {
     use RefreshDatabase;
-    protected $uri = "/api/v1/orders/";
+
+    protected $uri = '/api/v1/orders/';
 
     public function test_order_list(): void
     {

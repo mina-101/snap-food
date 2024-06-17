@@ -12,7 +12,7 @@ class UpdateOrderTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected $uri = "/api/v1/orders/";
+    protected $uri = '/api/v1/orders/';
 
     public function test_order_updates_successfully(): void
     {
@@ -24,7 +24,7 @@ class UpdateOrderTest extends TestCase
             'vendor_id' => Vendor::factory()->create()->id,
         ];
 
-        $this->putJson($this->uri . $order->id, $data)
+        $this->putJson($this->uri.$order->id, $data)
             ->assertOk()
             ->assertJsonPath('data.description', $data['description'])
             ->assertJsonPath('data.user_id', $data['user_id'])
@@ -37,7 +37,7 @@ class UpdateOrderTest extends TestCase
     public function test_order_doesnt_update_with_wrong_data(): void
     {
         $order = Order::factory()->create();
-        $this->putJson($this->uri . $order->id, [])
+        $this->putJson($this->uri.$order->id, [])
             ->assertStatus(422);
     }
 }

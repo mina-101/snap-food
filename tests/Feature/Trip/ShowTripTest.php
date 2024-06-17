@@ -4,14 +4,13 @@ namespace Tests\Feature\Trip;
 
 use App\Models\Trip;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ShowTripTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected $uri = "api/v1/trips/";
+    protected $uri = 'api/v1/trips/';
 
     public function test_trip_list(): void
     {

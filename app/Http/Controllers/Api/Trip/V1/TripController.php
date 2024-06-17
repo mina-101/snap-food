@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api\Trip\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Trip\V1\StoreTripRequest;
-use App\Http\Requests\Trip\V1\UpdateTripRequest;
 use App\Http\Resources\TripResource;
 use App\Models\Order;
 use App\Models\Trip;

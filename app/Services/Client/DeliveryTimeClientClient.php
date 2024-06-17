@@ -3,13 +3,11 @@
 namespace App\Services\Client;
 
 use App\Services\Client\Interface\DeliveryTimeClientInterface;
-use App\Services\Clients\DTO\Tapture\TaptureCreatePublisherResponseDTO;
 use Illuminate\Support\Facades\Http;
 use Random\RandomException;
 
 class DeliveryTimeClientClient implements DeliveryTimeClientInterface
 {
-
     /**
      * @throws RandomException
      */

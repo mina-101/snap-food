@@ -10,7 +10,7 @@ class ListAgentTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected $uri = "/api/v1/agents/";
+    protected $uri = '/api/v1/agents/';
 
     public function test_agent_list(): void
     {

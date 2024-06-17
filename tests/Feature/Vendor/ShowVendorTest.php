@@ -4,13 +4,13 @@ namespace Tests\Feature\Vendor;
 
 use App\Models\Vendor;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ShowVendorTest extends TestCase
 {
     use RefreshDatabase;
-    protected $uri = "/api/v1/vendors/";
+
+    protected $uri = '/api/v1/vendors/';
 
     public function test_vendor_list(): void
     {

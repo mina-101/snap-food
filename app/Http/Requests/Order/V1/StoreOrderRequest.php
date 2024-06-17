@@ -6,13 +6,12 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreOrderRequest extends FormRequest
 {
-
     public function rules(): array
     {
         return [
-            "description" => "nullable|string|max:255",
-            "user_id" => "required|exists:users,id",
-            "vendor_id" => "required|exists:vendors,id"
+            'description' => 'nullable|string|max:255',
+            'user_id' => 'required|exists:users,id',
+            'vendor_id' => 'required|exists:vendors,id',
         ];
     }
 }

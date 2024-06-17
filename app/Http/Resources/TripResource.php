@@ -15,8 +15,8 @@ class TripResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            "status" => $this->status,
-            "order_id" => $this->order_id
+            'status' => $this->status,
+            'order_id' => $this->order_id,
         ];
     }
 }

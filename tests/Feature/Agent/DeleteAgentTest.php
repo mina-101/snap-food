@@ -10,12 +10,12 @@ class DeleteAgentTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected $uri = "/api/v1/agents/";
+    protected $uri = '/api/v1/agents/';
 
     public function test_agent_deletes_successfully(): void
     {
         $agent = Agent::factory()->create();
-        $this->delete($this->uri . $agent->id)->assertOk();
+        $this->delete($this->uri.$agent->id)->assertOk();
         $this->assertDatabaseMissing('agents', $agent->toArray());
         $this->assertModelMissing($agent);
     }

@@ -10,7 +10,7 @@ class UpdateTripRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "status" => ["required", Rule::enum(TripStatus::class)]
+            'status' => ['required', Rule::enum(TripStatus::class)],
         ];
     }
 }

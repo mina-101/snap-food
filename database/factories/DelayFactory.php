@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Enums\DelayReportResult;
 use App\Enums\DelayStatus;
 use App\Models\Order;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -20,8 +19,8 @@ class DelayFactory extends Factory
     public function definition(): array
     {
         return [
-            "order_id" => Order::factory(),
-            "status" => fake()->randomElement(array_column(DelayStatus::cases(), 'value'))
+            'order_id' => Order::factory(),
+            'status' => fake()->randomElement(array_column(DelayStatus::cases(), 'value')),
         ];
     }
 }

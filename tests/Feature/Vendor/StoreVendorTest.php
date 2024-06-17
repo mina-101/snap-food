@@ -3,18 +3,18 @@
 namespace Tests\Feature\Vendor;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class StoreVendorTest extends TestCase
 {
     use RefreshDatabase;
-    protected $uri = "/api/v1/vendors/";
+
+    protected $uri = '/api/v1/vendors/';
 
     public function test_vendor_stores_successfully(): void
     {
         $data = [
-            'name' =>fake()->company
+            'name' => fake()->company,
         ];
         $this->postJson($this->uri, $data)
             ->assertCreated()

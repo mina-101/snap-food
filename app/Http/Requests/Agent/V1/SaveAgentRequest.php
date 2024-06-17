@@ -9,8 +9,8 @@ class SaveAgentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "first_name" => "required|string|max:255",
-            "last_name" => "required|string|max:255"
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
         ];
     }
 }

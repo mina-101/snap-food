@@ -10,7 +10,7 @@ class UpdateVendorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => ["required", "string","max:255", Rule::unique('vendors')->ignore($this->vendor, 'name')]
+            'name' => ['required', 'string', 'max:255', Rule::unique('vendors')->ignore($this->vendor, 'name')],
         ];
     }
 }

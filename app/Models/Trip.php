@@ -6,7 +6,6 @@ use App\Enums\TripStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Trip extends Model
 {
@@ -22,7 +21,7 @@ class Trip extends Model
     public function casts()
     {
         return [
-            'status' => TripStatus::class
+            'status' => TripStatus::class,
         ];
     }
 }

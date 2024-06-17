@@ -17,7 +17,7 @@ class AssignDelayedOrderController extends Controller
     {
         $result = $this->service->assignDelayedOrderToAgent($request->validated());
         if ($result['status'] == 422) {
-            return $this->unprocessable();
+            return $this->unprocessable($result);
         }
 
         return $this->created();
