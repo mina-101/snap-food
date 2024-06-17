@@ -18,7 +18,7 @@ Snap food project is a web application which designs and implements a simple del
 - git clone project from [https://github.com/mina-101/snap-food.git]
 - go to project directory:
     ```bash
-  cd snap-food/
+  cd snapp-food/
   ```
 - execute this command to build and run project: 
     ```bash
@@ -26,7 +26,7 @@ Snap food project is a web application which designs and implements a simple del
   ```
 - go to project container:
   ```bash
-  docker exec -it snap-food-laravel.test-1 bash
+  docker exec -it snapp-food-laravel.test-1 bash
     ```
 - install composer 
   ```bash
@@ -40,7 +40,7 @@ Snap food project is a web application which designs and implements a simple del
 ## Run Tests
 
   - ```bash
-    docker exec -it snap-food-laravel.test-1 bash
+    docker exec -it snapp-food-laravel.test-1 bash
     ```
   - ```bash
     php artisan test
