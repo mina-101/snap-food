@@ -10,7 +10,7 @@ class DelayReport extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['order_id', 'status'];
+    protected $fillable = ['order_id', 'status', 'delay', 'new_delivery_time'];
 
     public function trip(): BelongsTo
     {

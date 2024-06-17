@@ -23,6 +23,11 @@ abstract class Controller
         return $this->respondResourceWithStatusCode($resource, Response::HTTP_OK);
     }
 
+    public function unprocessable(): JsonResponse
+    {
+        return $this->respondResourceWithStatusCode(null, statusCode: Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
     protected function respondResourceWithStatusCode(?JsonResource $resource, $statusCode): JsonResponse
     {
         return ($resource ?? new JsonResource([]))->response()->setStatusCode($statusCode);

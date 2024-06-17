@@ -17,20 +17,13 @@ class DelayReportController extends Controller
     {
     }
 
-    public function index()
-    {
-        //
-    }
-
-
     public function store(Order $order)
     {
-        return $this->created(new DelayReportResource($this->delayReportService->store($order)));
+        $result = $this->delayReportService->store($order);
+        if ($result['status'] == 422) {
+            $this->unprocessable();
+        }
+        return $this->created();
     }
 
-
-    public function show(DelayReport $delayReport)
-    {
-        //
-    }
 }
