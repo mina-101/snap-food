@@ -14,7 +14,10 @@ class AssignDelayedOrderService
         $agent = Agent::with('delays')->find($agentData['agent_id']);
 
         if (count($agent->delays) > 0) {
-            return ['status' => 422];
+            return [
+                'status' => 422,
+                'message' => __('no more assignment is allowed'),
+            ];
         }
 
         $delayedOrder = $this->getDelayedOrder();

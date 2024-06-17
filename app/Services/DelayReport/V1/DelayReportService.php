@@ -21,7 +21,10 @@ class DelayReportService
         $trip = $order->trip;
         if ($trip && $this->isNotDelivered($trip)) {
             if (Carbon::now() < $order->delivery_time) {
-                return ['status' => 422];
+                return [
+                    'status' => 422,
+                    'message' => __('delivery time is not expired'),
+                ];
             }
             $delay = $this->getNewDeliveryTime();
             $newDeliveryTime = $this->calculateNewDeliveryTime($delay);

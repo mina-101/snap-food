@@ -23,9 +23,9 @@ abstract class Controller
         return $this->respondResourceWithStatusCode($resource, Response::HTTP_OK);
     }
 
-    public function unprocessable(): JsonResponse
+    public function unprocessable(?array $data): JsonResponse
     {
-        return $this->respondResourceWithStatusCode(null, statusCode: Response::HTTP_UNPROCESSABLE_ENTITY);
+        return response()->json($data, Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
     protected function respondResourceWithStatusCode(?JsonResource $resource, $statusCode): JsonResponse
