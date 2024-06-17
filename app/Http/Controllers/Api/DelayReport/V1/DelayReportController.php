@@ -21,7 +21,7 @@ class DelayReportController extends Controller
     {
         $result = $this->delayReportService->store($order);
         if ($result['status'] == 422) {
-            $this->unprocessable();
+            return $this->unprocessable();
         }
         return $this->created();
     }

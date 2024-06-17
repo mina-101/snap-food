@@ -21,7 +21,7 @@ class DelayReportService
     {
         $trip = $order->trip;
         if ($trip && $this->isNotDelivered($trip)) {
-            if (Carbon::now() < $trip->delivery_time) {
+            if (Carbon::now() < $order->delivery_time) {
                 return ["status" => 422];
             }
             $delay = $this->getNewDeliveryTime();
