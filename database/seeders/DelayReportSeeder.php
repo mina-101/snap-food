@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\DelayReport;
 use Illuminate\Database\Seeder;
 
 class DelayReportSeeder extends Seeder
@@ -12,6 +12,6 @@ class DelayReportSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        DelayReport::factory()->count(10)->create();
     }
 }
